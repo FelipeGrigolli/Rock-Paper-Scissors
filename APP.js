@@ -3,6 +3,7 @@ let computerScore = 0;
 
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Obter referências aos elementos HTML
   const userScore_span = document.getElementById("user-score");
   const computerScore_span = document.getElementById("computer-score");
   const result_p = document.querySelector(".result > p");
@@ -27,22 +28,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function win(userChoice, computerChoice) {
     userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
+    userScore_span.textContent = userScore;
+    computerScore_span.textContent = computerScore;
+    result_p.textContent = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
   }
 
 
   function lose(userChoice, computerChoice) {
     computerScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You Lost...`;
+    userScore_span.textContent = userScore;
+    computerScore_span.textContent = computerScore;
+    result_p.textContent = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You Lost...`;
   }
 
 
   function draw(userChoice, computerChoice) {
-    result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a Draw.`;
+    result_p.textContent = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a Draw.`;
   }
 
 
@@ -67,7 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+
   function main() {
+    // Adicionar eventos de clique aos elementos
     rock_div.addEventListener('click', () => game("r"));
     paper_div.addEventListener('click', () => game("p"));
     scissors_div.addEventListener('click', () => game("s"));
