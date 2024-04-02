@@ -1,7 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
 
-
 document.addEventListener("DOMContentLoaded", function() {
   // Obter referências aos elementos HTML
   const userScore_span = document.getElementById("user-score");
@@ -11,20 +10,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const paper_div = document.getElementById("p");
   const scissors_div = document.getElementById("s");
 
-
   function getComputerChoices() {
     const choices = ['r', 'p', 's'];
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
   }
 
-
   function convertToWord(letter) {
     if (letter === "r") return "Rock";
     if (letter === "p") return "Paper";
     return "Scissors";
   }
-
 
   function win(userChoice, computerChoice) {
     userScore++;
@@ -33,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     result_p.textContent = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
   }
 
-
   function lose(userChoice, computerChoice) {
     computerScore++;
     userScore_span.textContent = userScore;
@@ -41,11 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
     result_p.textContent = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You Lost...`;
   }
 
-
   function draw(userChoice, computerChoice) {
     result_p.textContent = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a Draw.`;
   }
-
 
   function game(userChoice) {
     const computerChoice = getComputerChoices();
@@ -68,14 +61,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-
   function main() {
-    // Adicionar eventos de clique aos elementos
-    rock_div.addEventListener('click', () => game("r"));
-    paper_div.addEventListener('click', () => game("p"));
-    scissors_div.addEventListener('click', () => game("s"));
+    // Verificar se os elementos existem antes de adicionar eventos de clique
+    if (rock_div && paper_div && scissors_div) {
+      // Adicionar eventos de clique aos elementos
+      rock_div.addEventListener('click', () => game("r"));
+      paper_div.addEventListener('click', () => game("p"));
+      scissors_div.addEventListener('click', () => game("s"));
+    }
   }
-
 
   main();
 });
