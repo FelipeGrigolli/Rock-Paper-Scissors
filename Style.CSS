@@ -1,0 +1,67 @@
+img{max-width: 100px;}
+
+body{background-color: #24272e;}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{background-color: rgb(255, 255, 255);
+          padding: 20px;}
+
+header > h1 {  
+  color: #24272e;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;}
+
+  .Score-Board{
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 200px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 15px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+  }
+
+  .badge{
+    background: #e2584d;
+    color: white;
+    font-size: 14px;
+      padding: 12px 10px;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #user-label {
+    position: absolute;
+    top: 20px;
+    left: -25px;
+  }
+
+  #computer-label {
+    position: absolute;
+    top: 20px;
+    right: -25px;
+  }
+
+  .result{
+    font-size: 40px;
+    color: white;
+  }
+
+  .result > p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  
+.choices{
+  text-align: center;
+  margin-top: 50px;
+} 
